@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://logstream_dock"]
+
+[ext_resource type="Script" path="res://addons/logstream/dock_panel.gd" id="1_dock"]
+
+[node name="DockPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dock")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Toolbar" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="SearchInput" type="LineEdit" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search logs..."
+clear_button_enabled = true
+
+[node name="Sep1" type="VSeparator" parent="VBox/Toolbar"]
+layout_mode = 2
+
+[node name="FilterErrors" type="CheckButton" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Show errors"
+button_pressed = true
+text = "ERR"
+
+[node name="FilterWarnings" type="CheckButton" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Show warnings"
+button_pressed = true
+text = "WRN"
+
+[node name="FilterInfo" type="CheckButton" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Show info/print messages"
+button_pressed = true
+text = "INF"
+
+[node name="Sep2" type="VSeparator" parent="VBox/Toolbar"]
+layout_mode = 2
+
+[node name="AutoScrollToggle" type="CheckButton" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Auto-scroll to newest"
+button_pressed = true
+text = "Auto"
+
+[node name="Sep3" type="VSeparator" parent="VBox/Toolbar"]
+layout_mode = 2
+
+[node name="CopyButton" type="Button" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Copy selected log to clipboard"
+text = "Copy"
+
+[node name="ClearButton" type="Button" parent="VBox/Toolbar"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "Clear all logs"
+text = "Clear"
+
+[node name="LogList" type="ItemList" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+allow_reselect = true
+allow_search = false
+auto_height = false
+select_mode = 1
+
+[node name="StatusBar" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="StatusLabel" type="Label" parent="VBox/StatusBar"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0 / 0 logs"
+
+
