@@ -111,3 +111,4 @@ Double-click any log entry with a file path to open the script at that line.
 MIT License
 
 
+

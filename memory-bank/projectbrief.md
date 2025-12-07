@@ -25,3 +25,4 @@ Godot LogStream is a Godot 4.5+ Editor addon that captures engine logs (errors, 
 - Meet Asset Library packaging standards
 
 
+

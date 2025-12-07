@@ -61,3 +61,4 @@ class LogEntry:
 4. **Batching**: WebSocket batches for efficiency (50 entries / 100ms)
 
 
+
